@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>full page slider</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">product</a>
+		<ul>
+			<li><a href="">home</a></li>
+			<li><a href="">store</a></li>
+			<li><a href="">contact</a></li>
+			<li><a href="">about</a></li>
+		</ul>
+	</header>
+	<section class="banner">
+		<div class="imgbx">
+			<img src="image/contact-bg1.jpg" class="active">
+			<img src="image/contact-bg2.jpg">
+			<img src="image/contact-bg3.jpg">
+			<img src="image/contact-bg4.jpg">
+		</div>
+s
+		<div class="contentBx">
+			<div class="active">
+				<h2>Slide Text one</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem qui dicta tempora perferendis. Provident soluta, ipsa culpa perferendis est aliquam itaque recusandae iste alias, eligendi neque repellat incidunt facere eos.</p>
+				<a href="#">one</a>
+			</div>
+			<div>
+				<h2>Slide Text Two</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem qui dicta tempora perferendis. Provident soluta, ipsa culpa perferendis est aliquam itaque recusandae iste alias, eligendi neque repellat incidunt facere eos.</p>
+				<a href="#">two</a>
+			</div>
+			<div>
+				<h2>Slide Text Three</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem qui dicta tempora perferendis. Provident soluta, ipsa culpa perferendis est aliquam itaque recusandae iste alias, eligendi neque repellat incidunt facere eos.</p>
+				<a href="#">three</a>
+			</div>
+			<div>
+				<h2>Slide Text Four</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem qui dicta tempora perferendis. Provident soluta, ipsa culpa perferendis est aliquam itaque recusandae iste alias, eligendi neque repellat incidunt facere eos.</p>
+				<a href="#">four</a>
+			</div>
+		</div>
+		<ul class="controls">
+			<li onclick="PrevSlide();PrevSlideText();"></li>
+			<li onclick="nextSlide();nextSlideText();"></li>
+		</ul>
+	</section>
+	<script>
+		const imgbx = document.querySelector('.imgbx');
+		const slides = imgbx.getElementsByTagName('img');
+		var i = 0;
+
+		function nextSlide() {
+			slides[i].classList.remove('active');
+			i = (i + 1) % slides.length;
+			slides[i].classList.add('active');
+		}
+		function PrevSlide() {
+			slides[i].classList.remove('active');
+			i = (i - 1 + slides.length) % slides.length;
+			slides[i].classList.add('active');
+		}
+		
+		const contentBx = document.querySelector('.contentBx');
+		const slidesText = contentBx.getElementsByTagName('div');
+		var j = 0;
+
+		function nextSlideText() {
+			slidesText[j].classList.remove('active');
+			j = (j + 1) % slidesText.length;
+			slidesText[j].classList.add('active');
+		}
+		function PrevSlideText() {
+			slidesText[j].classList.remove('active');
+			j = (j - 1 + slidesText.length) % slidesText.length;
+			slidesText[i].classList.add('active');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open+Sans',serif;
+}
+
+body {
+	background: #ff0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 30px 100px;
+	z-index: 10;
+}
+header .logo {
+	position: relative;
+	color: #fff;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 2rem;
+	text-decoration-line: none;
+	text-shadow: 5px 3px 2px  #e34de2;
+}
+
+header ul {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+header ul li {
+	position: relative;
+	list-style: none;
+	margin-left: 40px;
+}
+
+header ul li a {
+	font-size: 1.5rem;
+	color: #fff;
+	text-decoration-line: none;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.banner .imgbx {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.banner .imgbx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: 0.5s;
+	background-position: center;
+}
+/*此时全部照片在同一个位置*/
+
+.banner .imgbx img.active {                     /*此处.active不是类，而是连在一起的,难道是指优先执行，草，属性名选择*/
+	opacity: 1;
+}
+.controls {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	width: 80px;
+}
+.controls li {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background: #fff;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.controls li:hover {
+	background: #ffeb3b;
+}
+.controls li:before 
+{
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-left: 3px solid #111;
+	border-bottom: 3px solid #111;
+	transform: rotate(45deg);
+}
+.controls li:nth-child(2):before 
+{
+	transform: rotate(225deg);        /*rotate()默认为元素轴心点进行旋转*/
+}
+
+.contentBx {
+	position: absolute;
+	bottom: 0;
+	max-width: 700px;
+}
+
+.contentBx div {
+	display: none;
+}
+.contentBx div.active {                        /*div.active到底怎么用的???????*/
+	display: block;
+	padding: 30px;
+	padding-left: 100px;
+	background: rgba(0,0,0,.4);
+}
+
+.contentBx div h2 {
+	color: #fff;
+	font-size: 2em;
+	margin-bottom: 1rem;
+}
+
+.contentBx div p {
+	color: #fff;
+	font-size: 1.1em;
+}
+.contentBx div a {
+	color: #111;
+	font-size: 1.1em;
+	display: inline-block;
+	padding: 6px 30px;
+	background: #fff;
+	margin-top: 10px;
+	font-weight: 500;
+	text-decoration-line: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
